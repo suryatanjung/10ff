@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Multiplayer Typing Test | Authentication</title>
+    <style media="screen">
+      body {
+        color: #333;
+      }
+      body .container {
+        max-width: 640px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 25px;
+        height: 600px;
+      }
+      form label {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+      form input.text {
+        display: block;
+        width: 100%;
+        padding: 6px 12px;
+        vertical-align: middle;
+        border-top: 1px solid #575757;
+        height: 50px;
+        border-right: 1px solid #6b7a89;
+        border-bottom: 1px solid #70869b;
+        border-left: 1px solid #525a62;
+        font-size: 2.0em;
+        line-height: 1.0em;
+        font-family: Times New Roman, Times, serif;
+        color: #333;
+        width: 96%;
+        width: calc(100% - 26px);
+        margin-bottom: 18px;
+        text-align: center;
+        outline: none;
+      }
+      form input[type="submit"] {
+        margin: 0 auto !important;
+        border: 0;
+        background-color: #3276b1;
+        border-color: #285e8e;
+        color: #fff;
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 6px;
+        outline: none;
+      }
+      ul.error {
+        margin: 0 0 15px 0;
+        list-style: none;
+        color: red;
+      }
+      ul.error li {
+        padding: 0;
+        margin: 0;
+      }
+      ::-webkit-contacts-auto-fill-button, ::-webkit-credentials-auto-fill-button {
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <ul class="error">
+        
+      </ul>
+
+      <form id="auth" class="" action="/login" method="post">
+        <label for="username">Enter your username</label>
+
+        <input type="text" id="username" name="username" placeholder="Username" class="text" autocomplete="off">
+
+        <input type="submit" value="Enter">
+      </form>
+
+    </div>
+
+  </body>
+</html>
