@@ -1,0 +1,179 @@
+.game-result {
+  width: 280px;
+  padding: 0px;
+  background: #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  margin: 0 auto 20px auto;
+  border: 1px solid #e5f6ff;
+  overflow: hidden;
+}
+
+.game-result > h3 {
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 15px;
+  margin: 0px;
+  font-weight: bold;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.game-result.more-game-result thead {
+  background-color: #a7c8e7;
+}
+
+.game-result > h3 > a {
+  color: #fff;
+  text-transform: none;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.game-result > h3 > a:hover {
+  text-decoration: underline;
+}
+
+.game-result table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.game-result table > tbody > tr > td {
+  padding: 8px;
+  line-height: 1.428571429;
+  border-top: 1px solid #ddd;
+}
+
+.game-result tbody > tr:nth-child(odd) > td,
+.game-result > tbody > tr:nth-child(odd) > th {
+  padding: 8px;
+  line-height: 1.428571429;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.game-result table td.name {
+  width: 160px;
+}
+
+.game-result table td.value {
+  text-align: right;
+}
+
+.game-result strong,
+.game-result small {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.game-result span {
+  vertical-align: middle;
+}
+
+.game-result .wpm strong {
+  font-size: 46px;
+  color: #527a1e;
+  display: block;
+  margin-bottom: -9px;
+  margin-top: 3px;
+}
+
+.game-result .wpm small {
+  text-align: center;
+  display: block;
+}
+
+.game-result td.share {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game-result table td {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.game-result .btn {
+  margin: 10px 0;
+}
+
+.game-result small {
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+.game-result .correct {
+  color: green;
+}
+
+.game-result .wrong {
+  color: red;
+}
+
+.game-result a.faster {
+  font-size: 22px;
+  color: green;
+  display: block;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.facebook-btn-tb {
+  background-color: #305991;
+  border-color: #305991;
+  text-decoration: none;
+  border-bottom: 4px solid #1d3c55;
+}
+
+.facebook-btn-tb:hover {
+  background-color: #2a4d7e;
+  border-color: #23416b;
+}
+
+svg.facebook {
+  width: 30px;
+  color: #fff;
+  fill: #fff;
+  vertical-align: middle;
+  margin-right: -5px;
+}
