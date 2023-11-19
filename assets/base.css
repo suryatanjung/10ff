@@ -1,0 +1,15 @@
+.btn {
+  border: 0;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: #3276b1;
+  border-color: #285e8e;
+  color: #fff;
+  margin: 15px 0;
+}
