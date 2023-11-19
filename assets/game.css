@@ -1,0 +1,386 @@
+html, body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  max-width: 960px;
+  padding: 15px;
+}
+
+.server-information > .container {
+  padding: 0 15px;
+}
+
+.col-md-6 {
+  width: 49%;
+  width: calc(50% - 4px);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn.btn-new-game {
+  margin: 0;
+  vertical-align: middle;
+  border: 0;
+  padding: 15px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+input {
+  width: 90%;
+  width: calc(100% - 32px);
+  font-size: 31px;
+  outline: none;
+  border: 1px solid #8eb6d8;
+  margin: 15px 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 5px 7px;
+  line-height: normal;
+}
+
+input[disabled] {
+  background-color: #f3f3f3;
+}
+
+#game {
+  display: none;
+}
+
+#game.mounted {
+  display: block;
+}
+
+#game .zone {
+  font-size: 31px;
+}
+
+#game span {
+  margin: 0;
+  display: inline-block;
+  padding: 4px;
+}
+#game span.complete {
+  color: green;
+}
+#game span.highlight {
+  background-color: #ccc;
+}
+#game span.error.highlight {
+  color: inherit !important;
+  background-color: tomato !important;
+}
+#game span.error {
+  color: tomato !important;
+}
+#game .place-wrapper {
+  position: relative;
+  height: 84px;
+  /* height: 126px; */
+  padding: 10px 4px;
+  border: 1px solid #e5f6ff;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+}
+#game .place {
+  position: absolute;
+  top: 10px;
+  line-height: 38px;
+  color: #333;
+}
+
+.map {
+  margin: 25px 0;
+}
+
+.player {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.player.player-status-leave {
+  opacity: 0.2;
+}
+
+.player > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.player .userinfo-wrapper {
+  display: block;
+  font-weight: normal;
+  width: 180px;
+  overflow: hidden;
+}
+
+.player .payload-wrapper {
+  position: relative;
+  width: 99%;
+  width: calc(100% - 14px);
+  margin: 0 0 0 14px;
+}
+
+.player .payload-wrapper::after {
+  width: 11px;
+  height: 11px;
+  display: block;
+  content: ' ';
+  position: absolute;
+  right: -2px;
+  top: 0;
+  border-radius: 50%;
+  border: 1px solid #2699fb;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.player .payload-wrapper::before {
+  width: 11px;
+  height: 11px;
+  display: block;
+  content: ' ';
+  position: absolute;
+  left: -11px;
+  top: 0;
+  border-radius: 50%;
+  border: 1px solid #2699fb;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.player .payload-wrapper .payload {
+  height: 14px;
+  position: relative;
+  z-index: -1;
+}
+
+.player .payload-wrapper .payload::after {
+  content: '';
+  width: 100%;
+  display: block;
+  background-image: linear-gradient(to right, #2699fb 65%, rgba(255,255,255,0) 0%);
+  background-position: bottom;
+  background-size: 13px 1px;
+  background-repeat: repeat-x;
+  height: 50%;
+  margin-left: 2px;
+}
+
+.player.player-end .payload-wrapper::after {
+  background-color: transparent;
+}
+
+.player .avatar-wrapper {
+  top: 1px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #ccc;
+  background: #ccc;
+  border: none;
+  font-size: 0;
+  width: 11px;
+  height: 11px;
+  -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+  -moz-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+  -o-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+  -ms-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.player.player-me .avatar-wrapper {
+  background-color: #00a738;
+  background: #00a738;
+}
+
+.player .avatar-wrapper.beating {
+  padding: 0;
+  border: none;
+}
+
+.player .avatar-wrapper.beating.beating-1 {
+  background-color: gold;
+  background: gold;
+}
+
+.player .avatar-wrapper.beating.beating-2 {
+  background-color: silver;
+  background: silver;
+}
+
+.player .avatar-wrapper.beating.beating-3 {
+  background-color: #CD7F32;
+  background: #CD7F32;
+}
+
+.player > div.metadata-wrapper {
+  display: block;
+  width: 100%;
+  font-size: 0;
+}
+
+.player > div.metadata-wrapper > div {
+  display: inline-block;
+  width: 50%;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.results-wrapper {
+  text-align: right;
+}
+
+img.avatar {
+  width: 50px;
+  height: auto;
+}
+
+.overlayer {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.7;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  font-size: 6em;
+}
+
+.overlayer.active {
+  display: block;
+}
+
+.overlayer-title {
+  color: #fff;
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  font-size: 6em;
+  right: 0;
+  left: 0;
+}
+
+.beating {
+  border: 3px solid #000;
+  padding: 5px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 24px;
+}
+
+.beating-1 {
+  border: 3px solid gold;
+}
+
+.beating-2 {
+  border: 3px solid silver;
+}
+
+.beating-3 {
+  border: 3px solid #CD7F32;
+}
+
+::-webkit-contacts-auto-fill-button, ::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+.more-game-result {
+  display: inline-block;
+  width: 99%;
+  width: calc(100% - 4px);
+}
+
+.more-game-result table {
+  text-align: center;
+}
+
+.game-result table thead th {
+  padding: 5px;
+}
+
+.game-result-wrapper {
+  text-align: center;
+}
+
+.info.info-server {
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.footer small {
+  font-size: 12px;
+  color: #ccc;
+}
+
+#game .zone {
+  border: 1px solid #f0faff;
+  border-radius: 8px;
+  background-color: #badbfc;
+}
+
+.interface {
+  display: block;
+  text-align: center;
+}
+
+.interface-wrapper {
+  background: #a7c8e7;
+  margin: 6px;
+  padding: 2px;
+}
+
+.interface-wrapper input {
+  margin: 0;
+  width: 60%;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+span.status {
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: green;
+  padding: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .overlayer-title {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  input {
+    width: calc(100% - 16px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .overlayer-title {
+    font-size: 2.5em;
+  }
+}
